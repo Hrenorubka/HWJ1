@@ -1,1 +1,1 @@
-# HWJ1
+# Homework 1 for Java
