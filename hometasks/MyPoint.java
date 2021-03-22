@@ -4,7 +4,9 @@ import java.math.*;
 public class MyPoint {
     private double x = 0.0d;
     private double y = 0.0d;
-    public MyPoint(){ }
+
+    public MyPoint(){}
+
     public MyPoint(double x, double y) {
         this.x = x;
         this.y = y;
