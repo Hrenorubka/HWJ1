@@ -1,0 +1,65 @@
+div.workspace {
+    position: fixed;
+    top: 15px;
+    left: 0px;
+    width: 800px;
+    height: 900px;
+    color:darkslategrey; 
+
+}
+
+div.thesis {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 60%;
+    height: 30%;   
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+
+}
+
+div.moreinf{
+    position: relative;
+    top: 2%;
+    width: 95%;
+    height: 62%;
+}
+
+
+img.myphoto {
+    position: absolute;
+    top: 32px;
+    left: 65%;
+    width: 30%;
+    height: 30%;
+    background-color: green;
+    
+}
+
+p.bigwords {
+    position: relative;
+    font-size: 32px;
+}
+
+p.smallwords {
+    position: relative;
+    font-size: 20px;
+    padding-top: 2%;
+}
+
+a.link {
+    position: relative;
+   
+}
+
+th {
+    border: 2px solid black;
+    text-align: center;
+}
+
+td {
+    border: 2px solid black;
+    text-align: center;
+}
+
