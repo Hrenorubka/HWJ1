@@ -1,1 +1,1 @@
-# Homework 1 for Java
+# Homework 1 for UI
