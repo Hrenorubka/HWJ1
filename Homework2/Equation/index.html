@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel = "stylesheet" href = "style.css">
+        <title> Бывает </title>
+    </head>
+    <body>
+        <div id = "heap" class = "dhead">
+            <h1 class = "Hhead" >
+                Решение квадратных уравнений:
+            </h1>
+        </div>
+        <div id = "big" class = "bigplace">
+            <div id = "eq" class = "divequat">
+                <h2 id = "eq_heap" class = "heapequat">
+                    Ваше уравнение:
+                </h2>
+                <input class = "b_solve" id = "but_solve" onclick="setEquation()" type="button" value = "Решить">
+            </div>
+
+            <div id = "dcoeff" class = "divcoeff">
+                <h2 id = "eq_heap1" class = "heapequat">
+                    Введите коэффициенты:
+                </h2>
+                <div class="coeffa">
+                    <p class="coeff">a:</p>
+                    <input class="coeff" id="inpa" onkeydown="return checkCoeffA(event.key)" type="tel">
+                </div>
+                <div class="coeffb">
+                    <p class="coeff">b:</p>
+                    <input class="coeff" id = "inpb" onkeydown="return checkCoeffB(event.key)" type="tel">
+                </div>
+                <div class="coeffc">
+                    <p class="coeff">c:</p>
+                    <input class="coeff" id="inpc" onkeydown="return checkCoeffC(event.key)" type="tel">
+                </div>
+            </div> 
+        </div>
+        <div class = "divresulteq" id = "divResult"> 
+            <p class="solveEq" id = "pResult"></p>
+        </div>
+        <div class = "divresulttable">
+            <table class = "resultTable" id = "resultEqTable">
+                <thead>
+                    <tr id = "TableHeap">
+                        <th class="row">
+                          Прошлые уравнения
+                        </th>
+                        <th class="row">
+                            x<sub>1</sub>
+                        </th>
+                        <th class="row">
+                          x<sub>2</sub>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <script src = "scripts.js"></script>
+    </body>
+</html>

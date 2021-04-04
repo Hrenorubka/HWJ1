@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "Eraser";
+    src: url(text_styles/inglobal.regular.ttf);
+}
+
+@font-face {
+    font-family: "Heap";
+    src: url(text_styles/inglobal.bold.ttf);
+}
+
+body{
+    background-color: bisque;
+    font-family: "Eraser", "Comic Sans MS", "Comic Sans", cursive;
+}
+
+
+div.dhead {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    top: -2%;
+}
+
+
+div.bigplace {
+    position: relative;
+    top: -2%;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+}
+
+div.divequat {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+div.divcoeff {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+div.divresulteq {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    top: -2%;
+    text-align: center;
+}
+
+div.divresulttable {
+    position: relative;
+    top: -2%;
+    height: 40%;
+    width: 100%;
+    text-align: center;
+    overflow:auto;
+}
+
+input.b_solve{
+    top: 80%;
+    left: 41%;
+    position: absolute;
+    text-align: left;
+    font-size: 32px;
+    width: 160px;
+}
+
+h2.heapequat {
+    font-size: 28px;
+}
+
+h1.Hhead {
+    font-size: 38px;
+    font-family: "Heap", "Comic Sans MS", "Comic Sans", serif;
+    top: 30%;
+    position: relative;
+}
+
+div.coeffa {
+    position: relative;
+    width: 99%;
+    height: 15%;   
+}
+
+
+
+div.coeffb {
+    position: relative;
+    top: 10%;
+    width: 99%;
+    height: 15%; 
+}
+
+div.coeffc {
+    position: relative;
+    top: 20%;
+    width: 99%;
+    height: 15%;  
+}
+
+p.coeff {
+    font-size: 28px;
+    position: absolute;
+    width: 10%;
+    left: 0%;
+    text-align: right;
+    top: -30%;
+}
+
+input.coeff{
+    position: absolute;
+    font-size: 28px;
+    top: 15%;
+    left: 13%;
+    width: 80%;
+}
+
+p.solveEq {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    top: -30%;
+    font-size: 32px;
+}
+
+table.resultTable{
+    position: relative;
+    margin: auto; 
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+tr:nth-child(odd) {background-color:rgb(240, 221, 159);}
+tr:nth-child(even) {background-color:rgb(192, 192, 122);}
+
+th.row{
+    border:3px solid black;
+    background-color: coral;
+}
+
+td{
+    border:3px solid black;
+}
