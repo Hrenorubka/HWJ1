@@ -1,13 +1,11 @@
-package hometasks;
+package hometasks.task1.solutions;
 
 
 public class MyPolynomial {
     private double[] coeffs;
-
     public MyPolynomial() {
         this.coeffs = new double[10];
     }
-
     public MyPolynomial(double... coeffs) {
         this.coeffs = new double[coeffs.length + 5];
         int i = 0;
@@ -15,7 +13,6 @@ public class MyPolynomial {
             this.coeffs[i++] = inpCoeff;
         }
     }
-
     public int getDegree() {
         for (int i = coeffs.length - 1; i >= 0; i--) {
             if (coeffs[i] != 0.0d) {
@@ -24,26 +21,22 @@ public class MyPolynomial {
         }
         return 0;
     }
-
     @Override
     public String toString() {
         String out = "";
         for (int i = 0; i < coeffs.length; i++) {
-            if (coeffs[i] > 0.0d) {
-                out = "+" + ((Double) coeffs[i]).toString() + "x^" + ((Integer) i).toString() + out;
-            } else if (coeffs[i] < 0.0d) {
+            if (coeffs[i] > 0.0d)
+                out = "+" + ((Double)coeffs[i]).toString() + "x^" + ((Integer) i).toString() + out;
+            else if (coeffs[i] < 0.0d)
                 out = ((Double) coeffs[i]).toString() + "x^" + ((Integer) i).toString() + out;
-            }
         }
         return out;
     }
-
     public double evaluate(double x) {
         double out = 0.0d;
         for (int i = 0; i < coeffs.length; i++) {
-            if (coeffs[i] != 0.0d) {
+            if (coeffs[i] != 0.0d)
                 out = out + coeffs[i] * Math.pow(x, i);
-            }
         }
         return out;
     }

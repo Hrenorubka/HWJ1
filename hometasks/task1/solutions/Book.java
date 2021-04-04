@@ -1,4 +1,4 @@
-package hometasks;
+package hometasks.task1.solutions;
 
 import java.util.ArrayList;
 public class Book {
@@ -6,18 +6,15 @@ public class Book {
     private ArrayList<Author> authors;
     private double price;
     private int qty = 0;
-
     public Book(){
         name = "";
     }
-
     public Book(String name, ArrayList<Author> authors, double price) {
         this.name = name;
         this.authors = new ArrayList<Author>();
         this.authors.addAll(authors);
         this.price = price;
     }
-
     public Book(String name, ArrayList<Author> authors, double price, int qty) {
         this(name, authors, price);
         this.qty = qty;

@@ -1,4 +1,4 @@
-package hometasks;
+package hometasks.task1.solutions;
 
 public class Ball {
     private double x;

@@ -1,11 +1,9 @@
-package hometasks;
+package hometasks.task1.solutions;
 
 public class Circle implements GeometricFigure {
     private double radius = 1.0;
     private String color = "red";
-
     public Circle() { }
-
     public Circle(double radius) {
 
         this.radius = radius;

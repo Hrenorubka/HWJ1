@@ -1,13 +1,9 @@
-package hometasks;
-
-import java.lang.reflect.Member;
+package hometasks.task1.solutions;
 
 public class MyComplex {
     private double real = 0.0d;
     private double imag = 0.0d;
-
     public MyComplex(){}
-
     public MyComplex(double real, double imag) {
         this.imag = imag;
         this.real = real;
@@ -60,11 +56,9 @@ public class MyComplex {
     }
 
     public double argument() {
-        if (real >= 0) {
+        if (real >= 0)
             return (Math.atan(imag / real));
-        } else {
-            return (imag >=0 ? (Math.PI + Math.atan(imag / real)) : (-Math.PI + Math.atan(imag / real)) );
-        }
+        else return (imag >=0 ? (Math.PI + Math.atan(imag / real)) : (-Math.PI + Math.atan(imag / real)) );
     }
 
     public MyComplex add(MyComplex right) {
