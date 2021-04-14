@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Бульк</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+        <div id = "heap" class = "dhead">
+            <h1>Binary Search Tree</h1>
+        </div>
+        <div id = "big" class = "bigplace">
+            <div id = "eq" class = "treeBody">
+                
+            </div>
+
+            <div id = "dcoeff" class = "divcoeff">
+                <div class = "addCoeff">
+                    <h2 class="operationHead">Добавить элемент:</h2>
+                    <p class="addKey">Ключ:</p>
+                    <input class="addKey" id="inpKey" onkeydown="return checkCoeffA(event.key)" type="number">
+                    <p class="addVal">Значение:</p>
+                    <input class="addVal" id="inpVal" onkeydown="return checkCoeffA(event.key)" type="text">
+                    <input class="addButton" id="inpKey" onkeydown="return checkCoeffA(event.key)" type="button" value="Добавить элемент">
+                </div>
+                <div class = "delCoeff">
+                    <h2 class="operationHead">Удалить элемент:</h2>
+                    <p class="delKey">Ключ:</p>
+                    <input class="delKey" id="delKey" onkeydown="return checkCoeffA(event.key)" type="number">
+                    <input class="delButton" id="delButton" type="button" value="Удалить элемент">
+                </div>
+                <div class = "findCoeff">
+                    <h2 class="operationHead">Найти элемент:</h2>
+                    <p class="findKey">Ключ:</p>
+                    <input class="findKey" id="inpKey" onkeydown="return checkCoeffA(event.key)" type="number">
+                    <input class="findButton" id="delButton" type="button" value="Найти элемент">
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>
