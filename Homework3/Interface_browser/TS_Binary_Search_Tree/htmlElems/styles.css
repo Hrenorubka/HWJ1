@@ -1,0 +1,206 @@
+body {
+    background-color: darkgray;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+ 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+div.dhead {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+}
+
+div.bigplace {
+    position: relative;
+    top: -2%;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+}
+
+
+div.divcoeff {
+    position: absolute;
+    left: 65%;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+}
+
+div.addCoeff {
+    position: relative;
+    width: 100%;
+    height: 25%;
+}
+
+h2.operationHead {
+    font-size: 28px;
+    position: relative;
+    text-align: left;
+    left: 3%;
+    top: -14%;
+}
+
+p.addKey {
+    font-size: 28px;
+    position: absolute;
+    width: 10%;
+    left: 3%;
+    text-align: right;
+    top: 0%;
+}
+
+input.addKey{
+    position: absolute;
+    font-size: 28px;
+    top: 15%;
+    left: 26%;
+    width: 20%;
+}
+
+p.addVal {
+    font-size: 28px;
+    position: absolute;
+    width: 10%;
+    left: 3%;
+    text-align: right;
+    top: 45%;
+}
+
+input.addVal {
+    position: absolute;
+    font-size: 28px;
+    top: 60%;
+    left: 26%;
+    width: 20%;
+}
+
+input.addButton {
+    position: absolute;
+    font-size: 26px;
+    top: 40%;
+    left: 55%;
+    width: 40%;
+}
+
+div.delCoeff {
+    position: relative;
+    width: 100%;
+    height: 25%;
+}
+
+h2.delHead {
+    font-size: 28px;
+    position: relative;
+    text-align: left;
+    left: 3%;
+    top: -14%;
+}
+
+p.delKey {
+    position: absolute;
+    font-size: 28px;
+    top: 30%;
+    left: -5%;
+    width: 20%;
+    text-align: right;
+}
+
+input.delKey{
+    position: absolute;
+    font-size: 28px;
+    top: 44%;
+    left: 26%;
+    width: 20%;
+}
+
+input.delButton {
+    position: absolute;
+    font-size: 26px;
+    top: 44%;
+    left: 55%;
+    width: 40%;
+}
+
+
+div.findCoeff {
+    position: relative;
+    width: 100%;
+    height: 25%;
+}
+
+p.findKey {
+    font-size: 28px;
+    position: absolute;
+    width: 10%;
+    left: 3%;
+    text-align: right;
+    top: 0%;
+}
+
+input.findKey{
+    position: absolute;
+    font-size: 28px;
+    top: 15%;
+    left: 26%;
+    width: 20%;
+}
+
+input.findButton {
+    position: absolute;
+    font-size: 26px;
+    top: 15%;
+    left: 55%;
+    width: 40%;
+}
+
+div.resultFind {
+    position: absolute;
+    font-size: 26px;
+    top: 65%;
+    width: 99%;    
+}
+
+div.treeBody {
+    position: absolute;
+    text-align: center;
+    width: 73%;
+    height: 100%;
+    font-size: 28px;
+    top: 3%;
+}
+
+div.nodeLeft {
+    top: 18%;
+    font-size: 28px;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+
+div.nodeRight {
+    top: 18%;
+    font-size: 28px;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 60%;
+}
+
+p.nodeTree {
+    top:0%;
+    font-size: 22px;
+}
+
+sub {
+    font-size: 8px;
+}
