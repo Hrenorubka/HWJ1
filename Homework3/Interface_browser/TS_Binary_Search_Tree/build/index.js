@@ -45,6 +45,24 @@ var NodeOfTree = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    NodeOfTree.prototype.setColor = function (color) {
+        if (color === void 0) { color = 0; }
+        if (color === 0) {
+            this.div.style.color = "black";
+        }
+        else if (color === 1) {
+            this.div.style.color = "red";
+        }
+        else if (color === 2) {
+            this.div.style.color = "green";
+        }
+        else if (color === 3) {
+            this.div.style.color = "blue";
+        }
+        else if (color === 4) {
+            this.div.style.color = "yellow";
+        }
+    };
     return NodeOfTree;
 }());
 var BinaryTree = /** @class */ (function () {
@@ -56,11 +74,25 @@ var BinaryTree = /** @class */ (function () {
     BinaryTree.prototype.empty = function () {
         return (this.treeHead === null);
     };
+    BinaryTree.prototype.clearColorNode = function (curNode) {
+        if (curNode === void 0) { curNode = this.treeHead; }
+        if (this.treeHead == null) {
+            return;
+        }
+        if (curNode != null) {
+            curNode.setColor(0);
+            this.clearColorNode(curNode === null || curNode === void 0 ? void 0 : curNode.left);
+            this.clearColorNode(curNode === null || curNode === void 0 ? void 0 : curNode.right);
+        }
+    };
     BinaryTree.prototype.add = function (key, value, htmlElem) {
         if (this.treeHead != null) {
+            this.clearColorNode();
             var step = this.treeHead;
             var cur_height = 1;
             while (step != null) {
+                // step.setColor(2);
+                setTimeout(setColor, 1000, step, 2);
                 cur_height += 1;
                 if (cur_height > this.height) {
                     alert("Вы превысили максимум");
@@ -69,6 +101,7 @@ var BinaryTree = /** @class */ (function () {
                 if (step.key < key) {
                     if (step.right == null) {
                         step.right = new NodeOfTree(value, key, step.div, "nodeRight");
+                        setTimeout(setColor, 1000, step.right, 4);
                         break;
                     }
                     step = step.right;
@@ -76,6 +109,7 @@ var BinaryTree = /** @class */ (function () {
                 else if (step.key > key) {
                     if (step.left == null) {
                         step.left = new NodeOfTree(value, key, step.div, "nodeLeft");
+                        setTimeout(setColor, 1000, step.left, 4);
                         break;
                     }
                     step = step.left;
@@ -107,10 +141,18 @@ var BinaryTree = /** @class */ (function () {
         }
         return null;
     };
-    BinaryTree.prototype.find = function (key) {
+    BinaryTree.prototype.find = function (key, color) {
+        if (color === void 0) { color = 0; }
+        this.clearColorNode();
         var step = this.treeHead;
         while (step !== null) {
+            if (color !== 0) {
+                setTimeout(setColor, 1000, step, color);
+            }
             if (step.key === key) {
+                if (color !== 0) {
+                    setTimeout(setColor, 1000, step, 4);
+                }
                 return step;
             }
             step = (step.key < key) ? step.right : step.left;
@@ -124,7 +166,7 @@ var BinaryTree = /** @class */ (function () {
             return;
         }
         var parentNode = this.parent(key);
-        var delNode = this.find(key);
+        var delNode = this.find(key, 1);
         if (delNode === null) {
             alert("Элемента с таким ключом нет!");
             return;
@@ -210,7 +252,6 @@ var BinaryTree = /** @class */ (function () {
             }
             else {
                 if (parentReplaceNode === delNode) {
-                    alert("dadad");
                     (_d = parentReplaceNode.right) === null || _d === void 0 ? void 0 : _d.div.remove();
                     parentReplaceNode.right = null;
                     delNode.div.remove();
@@ -263,12 +304,16 @@ var BinaryTree = /** @class */ (function () {
     };
     return BinaryTree;
 }());
+function setColor(node, color) {
+    node === null || node === void 0 ? void 0 : node.setColor(color);
+}
 var resultFind = document.createElement("div");
 resultFind.className = "resultFind";
 (_a = document.getElementById("findCoeff")) === null || _a === void 0 ? void 0 : _a.append(resultFind);
 var tree = new BinaryTree();
 tree.div = document.getElementById("treeBody");
 function pressInpBut() {
+    resultFind.innerHTML = "";
     var key = null;
     var val = null;
     var tmp = document.getElementById("inpKey").value;
@@ -288,6 +333,7 @@ function pressInpBut() {
     }
 }
 function pressDelBut() {
+    resultFind.innerHTML = "";
     var key = null;
     var tmp = document.getElementById("delKey").value;
     if (typeof tmp === "string") {
@@ -300,7 +346,7 @@ function pressDelBut() {
     }
 }
 function pressFindBut() {
-    var _a, _b;
+    var _a;
     var key = null;
     var tmp = document.getElementById("findKey").value;
     if (typeof tmp === "string") {
@@ -309,12 +355,12 @@ function pressFindBut() {
         }
     }
     if (key !== null) {
-        var res = (_a = tree.find(key)) === null || _a === void 0 ? void 0 : _a.value;
+        var res = (_a = tree.find(key, 3)) === null || _a === void 0 ? void 0 : _a.value;
         var resString = "";
         if (typeof res === "number") {
             resString = "Значение при заданном ключе: " + res;
         }
-        else if ((typeof res === null) || (((_b = tree.find(key)) === null || _b === void 0 ? void 0 : _b.value) === undefined)) {
+        else if ((typeof res === null) || (res === undefined)) {
             resString = "Ваше значение при заданном ключе не найдено";
         }
         resultFind.innerHTML = resString;
