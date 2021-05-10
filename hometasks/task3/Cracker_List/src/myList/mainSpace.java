@@ -7,20 +7,40 @@ public class mainSpace {
 
     private static long testJavaListAdd(Integer[] inp) {
         LinkedList<Integer> testJavaList = new LinkedList<>();
-        long t = System.nanoTime();
         for (Integer a: inp) {
             testJavaList.add(a);
         }
-        return System.nanoTime() - t;
+        long t1;
+        long sum = 0;
+        long t2;
+        for (int i = 0; i < 1000; i++) {
+            int index = (int) (Math.random() * 1000);
+            t1 = System.nanoTime();
+            testJavaList.add(index);
+            t2 = System.nanoTime();
+            sum += t2-t1;
+            testJavaList.remove(index);
+        }
+        return sum / 1000;
     }
 
     private static long testMyListAdd(Integer[] inp) {
-        MyLinkedList<Integer> testMyList = new MyLinkedList<>();
-        long t = System.nanoTime();
+        MyLinkedList<Integer> testJavaList = new MyLinkedList<>();
         for (Integer a: inp) {
-            testMyList.add(a);
+            testJavaList.add(a);
         }
-        return System.nanoTime() - t;
+        long t1;
+        long sum = 0;
+        long t2;
+        for (int i = 0; i < 1000; i++) {
+            int index = (int) (Math.random() * 1000);
+            t1 = System.nanoTime();
+            testJavaList.add(index);
+            t2 = System.nanoTime();
+            sum += t2-t1;
+            testJavaList.remove(index);
+        }
+        return sum / 1000;
     }
 
     private static long testJavaListRemove(Integer[] inp) {
@@ -28,23 +48,37 @@ public class mainSpace {
         for (Integer a: inp) {
             testJavaList.add(a);
         }
-        long t = System.nanoTime();
-        for (int i = inp.length - 1; i >= 0; i--) {
-            testJavaList.remove(i);
+        long t1;
+        long sum = 0;
+        long t2;
+        for (int i = 0; i < 1000; i++) {
+            int index = (int) (Math.random() * 1000);
+            testJavaList.add(index);
+            t1 = System.nanoTime();
+            testJavaList.remove(index);
+            t2 = System.nanoTime();
+            sum += t2-t1;
         }
-        return System.nanoTime() - t;
+        return sum / 1000;
     }
 
     private static long testMyListRemove(Integer[] inp) {
-        MyLinkedList<Integer> testMyList = new MyLinkedList<>();
+        MyLinkedList<Integer> testJavaList = new MyLinkedList<>();
         for (Integer a: inp) {
-            testMyList.add(a);
+            testJavaList.add(a);
         }
-        long t = System.nanoTime();
-        for (int i = inp.length - 1; i >= 0; i--) {
-            testMyList.remove(i);
+        long t1;
+        long sum = 0;
+        long t2;
+        for (int i = 0; i < 1000; i++) {
+            int index = (int) (Math.random() * 1000);
+            testJavaList.add(index);
+            t1 = System.nanoTime();
+            testJavaList.remove(index);
+            t2 = System.nanoTime();
+            sum += t2-t1;
         }
-        return System.nanoTime() - t;
+        return sum / 1000;
     }
 
     private static long testJavaListGet(Integer[] inp) {
@@ -56,7 +90,7 @@ public class mainSpace {
         for (int i = inp.length - 1; i >= 0; i--) {
             testJavaList.get(i);
         }
-        return System.nanoTime() - t;
+        return (System.nanoTime() - t) / 1000;
     }
 
     private static long testMyListGet(Integer[] inp) {
@@ -68,7 +102,7 @@ public class mainSpace {
         for (int i = inp.length - 1; i >= 0; i--) {
             testMyList.get(i);
         }
-        return System.nanoTime() - t;
+        return (System.nanoTime() - t) / 1000;
     }
 
     private static long testJavaListIndexOf(Integer[] inp) {
@@ -80,7 +114,7 @@ public class mainSpace {
         for (int i = inp.length - 1; i >= 0; i--) {
             testJavaList.indexOf(i);
         }
-        return System.nanoTime() - t;
+        return (System.nanoTime() - t) / 1000;
     }
 
     private static long testMyListIndexOf(Integer[] inp) {
@@ -96,7 +130,7 @@ public class mainSpace {
     }
 
     public static void main(String[] args) {
-        int n = 1000;
+        int n = 10_000;
         Integer[] testMas = new Integer[n];
         for (int i = 0; i < n; i++) {
             testMas[i] = i;
