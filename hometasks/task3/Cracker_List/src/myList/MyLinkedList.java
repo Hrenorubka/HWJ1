@@ -43,8 +43,14 @@ public class MyLinkedList<E> implements ILinkedList<E>{
 
     @Override
     public void clear() {
+        if (size == 0)
+            return;
+        for (Node<E> Del = first; Del != null;) {
+            Node<E> DelNext = Del.nextNode;
+            Del.nextNode = null;
+            Del = DelNext;
+        }
         size = 0;
-        first.nextNode= null;
         last = first;
     }
 
